@@ -35,7 +35,7 @@ export class MythicalWeaponStore {
 	async create({ name, attack, defense }: { name: string; attack: Number; defense: Number }): Promise<Weapon[]> {
 		try {
 			const connect = await Client.connect()
-			const sql = `INSET INTO mythical_weapons (name, attack, defense) VALUES (${name}, ${attack}, ${defense}) RETURNING *`
+			const sql = `INSERT INTO mythical_weapons (name, attack, defense) VALUES ('${name}', ${attack}, ${defense}) RETURNING *`
 			const result = await connect.query(sql)
 			connect.release()
 			return result.rows
@@ -56,13 +56,13 @@ export class MythicalWeaponStore {
 		}
 	}
 
-	async delete(id: number): Promise<Weapon> {
+	async delete(id: number): Promise<number> {
 		try {
 			const connect = await Client.connect()
 			const sql = `DELETE FROM mythical_weapons WHERE id=${id}`
 			const result = await connect.query(sql)
 			connect.release()
-			return result.rows[0]
+			return result.rowCount
 		} catch (err) {
 			throw new Error(`Cannot delete weapon with id: ${id}. Error: ${err}`)
 		}
