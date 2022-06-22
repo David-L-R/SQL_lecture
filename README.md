@@ -55,6 +55,9 @@ For example
 # quit
 > \q
 
+# show all database
+> \l
+
 # show all tables in database
 > \dt
 
