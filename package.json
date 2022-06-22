@@ -1,9 +1,9 @@
 {
-  "name": "SQL",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:David-L-R/SQL_lecture.git",
-  "license": "MIT",
+	"name": "SQL",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:David-L-R/SQL_lecture.git",
+	"license": "MIT",
 	"scripts": {
 		"test": "jest --coverage",
 		"dev": "nodemon ./src/index.ts",
@@ -14,10 +14,12 @@
 		"prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
 	},
 	"author": "David Rajcher",
-  	"dependencies": {
+	"dependencies": {
 		"cookie-parser": "^1.4.6",
+		"dotenv": "^16.0.1",
 		"express": "^4.18.1",
-		"jsonwebtoken": "^8.5.1"
+		"jsonwebtoken": "^8.5.1",
+		"pg": "^8.7.3"
 	},
 	"devDependencies": {
 		"@types/cookie-parser": "^1.4.3",
@@ -25,6 +27,7 @@
 		"@types/jest": "^28.1.1",
 		"@types/jsonwebtoken": "^8.5.8",
 		"@types/node": "^17.0.41",
+		"@types/pg": "^8.6.5",
 		"@typescript-eslint/eslint-plugin": "^5.26.0",
 		"@typescript-eslint/parser": "^5.26.0",
 		"eslint": "^8.16.0",
